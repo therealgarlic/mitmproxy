@@ -81,7 +81,7 @@ Note:
     ---
     ## Set Up with Android - 1
     * Based on https://github.com/mitmproxy/mitmproxy/issues/2054#issuecomment-807083489
-    * We use Android Emulator on a UNIX-like machine
+    * We use an Android emulator on a UNIX-like machine
     * Install mitmproxy and start once
     * Install Android Studio, add emulator named `mitmDevice` through "Tools -> Device Manager -> Create Device"
       * Use some old Android Version (I use Android 7.1/SDK 25) *without* Google Play 
@@ -105,7 +105,12 @@ Note:
     hash=$(openssl x509 -noout -subject_hash_old -in "$CA")
     adb push "$CA" "/system/etc/security/cacerts/$HASH.0"
     adb unroot #Now close emulator
-    emulator -writable-system -http-proxy http://0.0.0.0:8080 -avd mitmDevice (Again, check that mitmproxy runs)
+    ```
+
+    Execute each time
+
+    ```bash
+    emulator -writable-system -http-proxy http://0.0.0.0:8080 -avd mitmDevice #(Check that mitmproxy runs)
     ```
 
     ---
@@ -170,6 +175,7 @@ Hi
 			Reveal.initialize({
 				hash: true,
         slideNumber: 'c',
+        progress: false,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
