@@ -157,6 +157,8 @@ Note:
 
     Contact: therealgarlic@mailbox.org
 
+    <small> Slides on https://therealgarlic.github.io/mitmproxy-presentation/ </small>
+
     ---
     ### Appendix: Store/Load Flow
 
@@ -184,6 +186,9 @@ Hi
 				hash: true,
         slideNumber: 'c',
         progress: false,
+        keyboard: {
+          32: function() {} //Disable Space because in Video space goes to next slide
+        },
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
