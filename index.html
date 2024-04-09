@@ -109,9 +109,9 @@ Note:
     adb root
     adb remount
     CA="$HOME/.mitmproxy/mitmproxy-ca-cert.pem"
-    hash=$(openssl x509 -noout -subject_hash_old -in "$CA")
+    HASH=$(openssl x509 -noout -subject_hash_old -in "$CA")
     adb push "$CA" "/system/etc/security/cacerts/$HASH.0"
-    adb unroot #Now close emulator
+    adb unroot #Now reboot the emulator smartphone itself
     ```
 
     Execute each time
